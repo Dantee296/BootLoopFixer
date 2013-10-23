@@ -15,10 +15,6 @@ void BLFDeviceNotificationReceived(am_device_notification_callback_info *info, v
 	[(EAAppDelegate *)[NSApplication sharedApplication].delegate deviceNotificationReceivedWithInfo:info];
 }
 
-void Disconnect(am_device_notification_callback_info *info, void *context) {
-	[(EAAppDelegate *)[NSApplication sharedApplication].delegate deviceNotificationReceivedWithInfo : info];
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	am_device_notification *deviceNotification;
 	AMDeviceNotificationSubscribe(BLFDeviceNotificationReceived, 0, 0, NULL, &deviceNotification);
